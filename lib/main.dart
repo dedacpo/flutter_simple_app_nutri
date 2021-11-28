@@ -68,29 +68,43 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (_) {
               return Container(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                    left: 20,
+                    right: 20),
                 child: Form(
-                  child: Column(
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Nome'),
+                  child: SingleChildScrollView(
+                    child: AnimatedPadding(
+                      padding: MediaQuery.of(context).viewInsets,
+                      duration: const Duration(milliseconds: 100),
+                      curve: Curves.decelerate,
+                      child: Column(
+                        children: [
+                          TextField(
+                            decoration: InputDecoration(labelText: 'Nome'),
+                          ),
+                          TextFormField(
+                            decoration: InputDecoration(labelText: 'Descrição'),
+                          ),
+                          TextFormField(
+                            decoration:
+                                InputDecoration(labelText: 'Imagem URL'),
+                          ),
+                          TextFormField(
+                              decoration:
+                                  InputDecoration(labelText: 'Calorias'),
+                              keyboardType: TextInputType.number),
+                          TextFormField(
+                              decoration:
+                                  InputDecoration(labelText: 'Proteínas'),
+                              keyboardType: TextInputType.number),
+                          TextFormField(
+                              decoration:
+                                  InputDecoration(labelText: 'Carboidratos'),
+                              keyboardType: TextInputType.number),
+                        ],
                       ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Descrição'),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Imagem URL'),
-                      ),
-                       TextFormField(
-                          decoration: InputDecoration(labelText: 'Calorias'),
-                          keyboardType: TextInputType.number),
-                      TextFormField(
-                          decoration: InputDecoration(labelText: 'Proteínas'),
-                          keyboardType: TextInputType.number),
-                      TextFormField(
-                          decoration:
-                              InputDecoration(labelText: 'Carboidratos'),
-                          keyboardType: TextInputType.number),
-                    ],
+                    ),
                   ),
                 ),
               );
