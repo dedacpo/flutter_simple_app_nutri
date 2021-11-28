@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'meal.dart';
+import 'provider_meal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
 late Future<List<Meal>> meals;
+
+@override
+  void initState() {
+    super.initState();
+    meals = Meals().getMeals();
+  }
+
 
   @override
   Widget build(BuildContext context) {
