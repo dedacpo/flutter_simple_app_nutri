@@ -35,6 +35,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late Future<List<Meal>> meals;
 
+  final newMealTitle = TextEditingController();
+  final newMealDescription = TextEditingController();
+  final newMealProt = TextEditingController();
+  final newMealCarbs = TextEditingController();
+  final newMealKcal = TextEditingController();
+  final newMealImgUrl = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -81,28 +88,37 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                         children: [
                           TextField(
+                            controller: newMealTitle,
                             decoration: InputDecoration(labelText: 'Nome'),
                           ),
                           TextFormField(
+                            controller: newMealDescription,
                             decoration: InputDecoration(labelText: 'Descrição'),
                           ),
                           TextFormField(
+                            controller: newMealImgUrl,
                             decoration:
                                 InputDecoration(labelText: 'Imagem URL'),
                           ),
                           TextFormField(
+                              controller: newMealKcal,
                               decoration:
                                   InputDecoration(labelText: 'Calorias'),
                               keyboardType: TextInputType.number),
                           TextFormField(
+                              controller: newMealProt,
                               decoration:
                                   InputDecoration(labelText: 'Proteínas'),
                               keyboardType: TextInputType.number),
                           TextFormField(
+                              controller: newMealCarbs,
                               decoration:
                                   InputDecoration(labelText: 'Carboidratos'),
                               keyboardType: TextInputType.number),
-                          ElevatedButton(onPressed: () {}, child: Text('salvar'))
+                          ElevatedButton(
+                              onPressed: () {
+                                print('newMealTitle' + newMealTitle.text);
+                              }, child: Text('salvar'))
                         ],
                       ),
                     ),
