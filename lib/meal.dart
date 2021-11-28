@@ -31,7 +31,9 @@ class Meal {
 }
 
 Widget widgetMeal(Meal meal, BuildContext context){
-  return Column(children: [
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
      Image.network(meal.imgUrl),
       Text(
         meal.title,
