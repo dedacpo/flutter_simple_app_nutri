@@ -64,9 +64,27 @@ class _MyHomePageState extends State<MyHomePage> {
       )),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () => showModalBottomSheet(context: context, builder: (_){
-          return Container();
-        }),
+        onPressed: () => showModalBottomSheet(
+            context: context,
+            builder: (_) {
+              return Container(
+                child: Form(
+                  child: Column(
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Nome'),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Descrição'),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Imagem URL'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
