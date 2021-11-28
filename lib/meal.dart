@@ -28,6 +28,17 @@ class Meal {
     );
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'kcal': kcal,
+      'carbs': carbs,
+      'proteins': prot,
+      'description': description,
+      'imageUrl': imgUrl,
+    };
+  }
+
 }
 
 Widget widgetMeal(Meal meal, BuildContext context){
