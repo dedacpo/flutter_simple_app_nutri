@@ -102,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               decoration:
                                   InputDecoration(labelText: 'Carboidratos'),
                               keyboardType: TextInputType.number),
+                          ElevatedButton(onPressed: () {}, child: Text('salvar'))
                         ],
                       ),
                     ),
