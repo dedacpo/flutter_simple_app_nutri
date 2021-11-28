@@ -64,7 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
       )),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () => showModalBottomSheet(context: context, builder: (_){
+          return Container();
+        }),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
