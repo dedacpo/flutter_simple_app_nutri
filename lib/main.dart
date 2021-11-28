@@ -48,7 +48,7 @@ late Future<List<Meal>> meals;
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
+      body: SingleChildScrollView(
           child: FutureBuilder<List<Meal>>(future: meals, builder: (context, snapshot) {
             if(snapshot.data == null){
               return Container();
