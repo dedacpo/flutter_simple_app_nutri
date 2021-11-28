@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'meal.dart';
@@ -32,15 +33,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late Future<List<Meal>> meals;
 
-late Future<List<Meal>> meals;
-
-@override
+  @override
   void initState() {
     super.initState();
     meals = Meals().getMeals();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +47,21 @@ late Future<List<Meal>> meals;
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SingleChildScrollView(
-          child: FutureBuilder<List<Meal>>(future: meals, builder: (context, snapshot) {
-            if(snapshot.data == null){
-              return Container();
-            }
-            return Column(children: snapshot.data!.map((e) => widgetMeal(e, context)).toList()
-            );
-          },) 
-      ),
+      body: Container(
+          child: FutureBuilder<List<Meal>>(
+        future: meals,
+        builder: (context, snapshot) {
+          if (snapshot.data == null) {
+            return Container();
+          }
+          return CarouselSlider(
+            items: snapshot.data!.map((e) => widgetMeal(e, context)).toList(),
+            options:
+                CarouselOptions(height: MediaQuery.of(context).size.height),
+          );
+          //return Column(children: snapshot.data!.map((e) => widgetMeal(e, context)).toList()
+        },
+      )),
     );
   }
 }
