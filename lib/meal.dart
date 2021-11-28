@@ -15,4 +15,15 @@ class Meal {
     required this.prot,
   });
 
+  factory Meal.fromJson(Map<String, dynamic> json) {
+    return Meal(
+      title: json['title'],
+      kcal: json['kcal'],
+      carbs: json['carbs'],
+      prot: json['proteins'],
+      description: json['description'],
+      imgUrl: json['imageUrl'],
+    );
+  }
+
 }
