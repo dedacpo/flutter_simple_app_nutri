@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         description: newMealDescription.text,
                                         imgUrl: newMealImgUrl.text,
                                         prot: int.parse(newMealProt.text),
-                                        carbs: int.parse(newMealProt.text),
+                                        carbs: int.parse(newMealCarbs.text),
                                         kcal: int.parse(newMealKcal.text))
                                     .toJson();
                                 Meals().postMeal(mealMap).then((value) {
