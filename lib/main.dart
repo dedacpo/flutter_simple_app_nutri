@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'meal.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -36,7 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(),
+      body: Container(
+        child: widgetMeal(),
+      ),
     );
   }
 }

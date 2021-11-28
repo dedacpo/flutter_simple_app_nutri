@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Meal {
   final String title;
   final String imgUrl;
@@ -26,4 +28,8 @@ class Meal {
     );
   }
 
+}
+
+Widget widgetMeal(){
+  return Text('WidgetMeal');
 }
