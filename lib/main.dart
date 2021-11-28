@@ -118,7 +118,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           ElevatedButton(
                               onPressed: () {
                                 print('newMealTitle' + newMealTitle.text);
-                              }, child: Text('salvar'))
+                                final mealMap = Meal(
+                                        title: newMealTitle.text,
+                                        description: newMealDescription.text,
+                                        imgUrl: newMealImgUrl.text,
+                                        prot: int.parse(newMealProt.text),
+                                        carbs: int.parse(newMealProt.text),
+                                        kcal: int.parse(newMealKcal.text))
+                                    .toJson();
+                              },
+                              child: Text('salvar'))
                         ],
                       ),
                     ),
