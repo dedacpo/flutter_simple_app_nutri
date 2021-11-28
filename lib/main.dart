@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +38,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
-        child: widgetMeal(),
-      ),
+          child: widgetMeal(
+              Meal(
+                  carbs: 10,
+                  title: 'asdada',
+                  description: 'sadsa asd sadas dsada',
+                  kcal: 10,
+                  prot: 10,
+                  imgUrl:
+                      'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640'),
+              context)),
     );
   }
 }
