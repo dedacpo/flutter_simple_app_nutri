@@ -80,6 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       TextFormField(
                         decoration: InputDecoration(labelText: 'Imagem URL'),
                       ),
+                       TextFormField(
+                          decoration: InputDecoration(labelText: 'Calorias'),
+                          keyboardType: TextInputType.number),
+                      TextFormField(
+                          decoration: InputDecoration(labelText: 'Proteínas'),
+                          keyboardType: TextInputType.number),
+                      TextFormField(
+                          decoration:
+                              InputDecoration(labelText: 'Carboidratos'),
+                          keyboardType: TextInputType.number),
                     ],
                   ),
                 ),
