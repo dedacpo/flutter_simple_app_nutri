@@ -62,6 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
           //return Column(children: snapshot.data!.map((e) => widgetMeal(e, context)).toList()
         },
       )),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
