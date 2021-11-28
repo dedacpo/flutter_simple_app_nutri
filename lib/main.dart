@@ -126,6 +126,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                         carbs: int.parse(newMealProt.text),
                                         kcal: int.parse(newMealKcal.text))
                                     .toJson();
+                                Meals().postMeal(mealMap).then((value) {
+                                  setState(() {
+                                    meals = Meals().getMeals();
+                                  });
+                                  Navigator.pop(context);
+                                });
                               },
                               child: Text('salvar'))
                         ],
